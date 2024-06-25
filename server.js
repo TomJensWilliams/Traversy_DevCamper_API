@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
-app.use('/api/vi/auth', auth);
+// app.use('/api/vi/auth', auth);
 
 app.use(errorHandler);
 
