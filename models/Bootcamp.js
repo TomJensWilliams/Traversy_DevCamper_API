@@ -136,11 +136,10 @@ BootcampSchema.pre('save', async function (next) {
   next();
 });
 
-/* I DONT THINK THIS IS SUPPOSED TO BE INCLUDED YET
 // Cascade delete courses when a bootcamp is deleted
-BootcampSchema.pre('remove', async function(next) {
+BootcampSchema.pre('remove', async function (next) {
   console.log(`Courses being removed from bootcamp ${this._id}`);
-  await this.model('Course').deleteMany({ bootcamp: this._id});
+  await this.model('Course').deleteMany({ bootcamp: this._id });
   console.log(`Reviews being removed from bootcamp ${this._id}`);
   await this.model('Review').deleteMany({ bootcamp: this._id });
   next();
@@ -151,8 +150,7 @@ BootcampSchema.virtual('courses', {
   ref: 'Course',
   localField: '_id',
   foreignField: 'bootcamp',
-  justOne: false
+  justOne: false,
 });
-*/
 
 module.exports = mongoose.model('Bootcamp', BootcampSchema);
